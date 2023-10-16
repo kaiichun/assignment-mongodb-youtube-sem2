@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
+const { MONGODB_URL } = require("./config.js");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,7 +19,7 @@ const corsHandler = cors({
 app.use(corsHandler);
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/youtubeDB")
+  .connect(MONGODB_URL + "youtubeDB")
   .then(() => console.log("Youtube MongoDB is Connected... "))
   .catch((error) => console.log(error));
 
