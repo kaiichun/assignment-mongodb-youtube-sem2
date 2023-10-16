@@ -18,7 +18,7 @@ const userSchema = new Schema(
     },
     image: {
       type: String,
-      default: "thumbnail/default_profileImage.jpeg",
+      default: "thumbnails/default_profileImage.jpeg",
     },
     subscribers: {
       type: Number,
